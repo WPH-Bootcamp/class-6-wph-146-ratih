@@ -10,6 +10,7 @@
   // $type-map: map-get($level, $type);
 
   @if map.has-key($colors, $type) and ($colors, $level) {
+    $level-map: map.get($colors, $type);
     @return map.get(map.get($colors, $type), $level);
   } @else {
     @warn "Invalid color level: `#{$level}` for type `#{$type}`";
